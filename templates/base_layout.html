@@ -14,7 +14,7 @@
 
 <body>
 {% block header  %}
-    {% include 'header_layout.html' %}
+    {% include 'includes/header_layout.html' %}
 {% endblock header %}
 {% block banner  %}
 {% endblock banner  %}
@@ -79,6 +79,24 @@
                     MenuItems.style.maxHeight = "0px"
                 }
             }
+        }
+    </script>
+    <!-- Toggle Form -->
+    <script>
+        var LoginForm = document.getElementById("LoginForm");
+        var RegForm = document.getElementById("RegForm");
+        var Indicator = document.getElementById("Indicator");
+        function register() {
+            RegForm.style.transform = "translatex(0px)";
+            LoginForm.style.transform = "translatex(0px)";
+            Indicator.style.transform = "translateX(100px)";
+
+        }
+        function login() {
+            RegForm.style.transform = "translatex(300px)";
+            LoginForm.style.transform = "translatex(300px)";
+            Indicator.style.transform = "translate(0px)";
+
         }
     </script>
 
