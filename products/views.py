@@ -7,12 +7,13 @@ def index(request):
 
 #view list products
 def product_list(request):
-    product_list = Product.objects.all()
+    products = Product.objects.all()
     context = {
-        'product_list': product_list
+        'products': products
     }
     return render(request,'product.html',context)
 
 
-def product_detail(request):
-    return render(request, 'product_detail.html')
+def product_detail(request, id):
+    product = Product.objects.get(id=id)
+    return render(request, 'product_detail.html', {'product': product})
